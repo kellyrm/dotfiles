@@ -1,0 +1,12 @@
+#include "/home/kelly/solarized/xresources/solarized"
+
+URxvt.scrollBar: false
+urxvt*internalBorder: 10
+urxvt*borderColer: 1c1c1c
+urxvt*borderLess: false
+urxvt*font: xft:SourceCodePro:size=10
+
+urxvt*transparent: true
+urxvt*shading: 40
+urxvt*fading: 0
+
