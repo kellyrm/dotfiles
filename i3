@@ -17,6 +17,7 @@ gaps inner 10
 
 #start programs
 exec slack
+exec udiskie
 
 #remove window titles
 default_border pixel 0

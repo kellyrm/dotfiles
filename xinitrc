@@ -5,6 +5,7 @@ usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 setxkbmap -option caps:escape
+setxkbmap -option 108:22
 
 # merge in defaults and keymaps
 
@@ -52,3 +53,4 @@ fi
 #betterlockscreen -w blur
 
 exec i3
+udiskie --no-notify &
