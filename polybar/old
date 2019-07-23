@@ -26,7 +26,8 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-[bar/master]
+[bar/example]
+monitor = ${env:MONITOR:eDP1}
 width = 100%
 height = 20 
 ;offset-x = 1%
@@ -54,6 +55,10 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 font-3 = icons:style=Regular;size=10
 
+modules-left = i3 backlight-acpi windscribe
+modules-center = 
+;modules-right = filesystem pulseaudio memory cpu wlan eth battery temperature date
+modules-right = pulseaudio filesystem memory wlan eth cpu temperature battery date
 
 tray-position = right
 tray-padding = 2
@@ -74,22 +79,6 @@ tray-transparent = true
 cursor-click = pointer
 cursor-scroll = ns-resize
 bottom = true
-
-[bar/eDP1]
-inherit = bar/master
-monitor = eDP1
-modules-left = i3 backlight-acpi windscribe
-modules-center = 
-;modules-right = filesystem pulseaudio memory cpu wlan eth battery temperature date
-modules-right = pulseaudio filesystem memory wlan eth cpu temperature battery date
-
-[bar/DP1]
-inherit = bar/master
-monitor = DP1
-modules-left = i3 
-modules-center = 
-;modules-right = filesystem pulseaudio memory cpu wlan eth battery temperature date
-modules-right = pulseaudio filesystem memory wlan eth cpu temperature battery date
 
 [module/windscribe]
 type = custom/script

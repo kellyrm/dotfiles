@@ -12,6 +12,12 @@ zstyle :compinstall filename '/home/kelly/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+#
+
+PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib64/pkgconfig
+export PKG_CONFIG_PATH
+EDITOR=/usr/bin/vim
+export EDITOR
 
 setopt autocd
 
@@ -22,5 +28,19 @@ setopt HIST_IGNORE_ALL_DUPS
 alias a=ls
 alias ...=../..
 alias b='cd -'
+hg() {
+	if [[ $1 == "checkout" ]]; then
+		if [[ $2 == "-b" ]]; then
+			command hg bookmark "$3"
+			command hg update "$3"
+		else
+			command hg update "$2"
+		fi
+	elif [[ $1 == "push"] ]]; then
+		command hg push -b "$2"
+	else
+		command hg "$@"
+	fi
+}
 
 . ~/.promptline.sh

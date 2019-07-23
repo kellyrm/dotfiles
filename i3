@@ -4,13 +4,34 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 #
-exec_always --no-startup-id ~/.config/polybar/launch.sh example
+exec_always --no-startup-id ~/.config/polybar/launch.sh example 
 exec_always --no-startup-id compton --config /home/kelly/.config/compton.conf -b 
 #--config ~/.config/compton.conf
 
 exec_always --no-startup-id betterlockscreen -w dim
 bindsym $mod+semicolon exec betterlockscreen -l blur -t "         locked"
 bindsym $mod+u move workspace to output right
+exec_always setxkbmap -option caps:escape
+exec_always setxkbmap -option 108:22
+exec_always xmodmap ~/.Xmodmap
+
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.focused          #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
+
 #gaps
 gaps inner 10 
 #smart_gaps on
@@ -63,7 +84,7 @@ bindcode $mod+Shift+53 kill
 #bindsym $mod+Shift+e exec i3-msg exit
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -show drun
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
