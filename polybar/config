@@ -274,7 +274,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = enp2s0
+interface = enp57s0u1u3
 interval = 3.0
 
 ;format-connected-underline = #55aa55
@@ -368,7 +368,7 @@ poll-interval = 5
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 0 
+thermal-zone = 8 
 warn-temperature = 60
 
 format = <ramp> <label>
