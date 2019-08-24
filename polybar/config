@@ -369,7 +369,7 @@ poll-interval = 5
 [module/temperature]
 type = internal/temperature
 thermal-zone = 8 
-warn-temperature = 60
+warn-temperature = 90 
 
 format = <ramp> <label>
 ;format-underline = #f50a4d

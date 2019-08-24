@@ -14,6 +14,8 @@ compinit
 # End of lines added by compinstall
 #
 
+bindkey '^B' push-line
+
 PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib64/pkgconfig
 export PKG_CONFIG_PATH
 EDITOR=/usr/bin/vim
